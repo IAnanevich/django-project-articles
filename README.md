@@ -1,5 +1,4 @@
-# Weather App
-
+# Blog
 ```
 $ git clone https://github.com/IAnanevich/django-project-articles.git
 $ cd articles_and_users
