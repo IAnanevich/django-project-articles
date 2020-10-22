@@ -1,3 +1,7 @@
 from django.shortcuts import render
+import requests
 
-# Create your views here.
+
+# class ArticleView:
+def create_article(request):
+    return render(request, "article/create_article.html")

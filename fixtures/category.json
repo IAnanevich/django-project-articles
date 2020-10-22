@@ -1,0 +1,10 @@
+[
+  {
+    "model": "blog_app.category",
+    "pk": 1,
+    "fields": {
+      "name": "Programming",
+      "description": "About programming"
+    }
+  }
+]

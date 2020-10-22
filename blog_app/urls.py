@@ -1,13 +1,7 @@
-from django.urls import path
-from api.views import CategoryViewSet, ArticleViewSet, AuthorViewSet, CommentViewSet
-from rest_framework.routers import DefaultRouter
+from django.urls import path, include
+from blog_app import views
 
 
-router = DefaultRouter()
-
-router.register(r"article", ArticleViewSet)
-router.register(r"author", AuthorViewSet)
-router.register(r"category", CategoryViewSet)
-router.register(r"comment", CommentViewSet)
-
-urlpatterns = router.urls
+urlpatterns = [
+    path("create-article/", views.create_article),
+]
