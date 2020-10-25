@@ -4,6 +4,12 @@ $ git clone https://github.com/IAnanevich/django-project-articles.git
 $ cd articles_and_users
 ```
 
+## Develop mode 
+
+```
+$ docker-compose up --build
+```
+
 ## Author 
 
 - **Ivan Ananevich** - On a GitHub [IAnanevich]
