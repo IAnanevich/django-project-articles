@@ -9,7 +9,7 @@ class Author(models.Model):
     last_name = models.CharField("Last name", max_length=30)
     email = models.EmailField("Email")
     register_date = models.DateField("Registration date", auto_now=True)
-    photo = models.ImageField("Photo", null=True, blank=True, upload_to="author/")
+    photo = models.ImageField("Photo", null=True, blank=False, upload_to="author/")
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
@@ -44,11 +44,15 @@ class Article(models.Model):
     category = models.ForeignKey(
         Category, verbose_name="Category", on_delete=models.PROTECT, null=True
     )
-    image = models.ImageField("Image", null=True, blank=True, upload_to="article/")
+    image = models.ImageField("Image", null=True, blank=False, upload_to="article/")
     register_date = models.DateField("Registration date", auto_now=True)
+    article_text = models.TextField("Text")
 
     def __str__(self):
         return self.title
+
+    def short_description(self):
+        return self.description[:20]
 
     class Meta:
         verbose_name = "Article"
@@ -59,7 +63,7 @@ class Comment(models.Model):
     """Comment"""
 
     comment = models.TextField("Comment")
-    author = models.ForeignKey(Author, verbose_name="Author", on_delete=models.CASCADE, null=True)
+    author = models.CharField("Name", max_length=100)
     article = models.ForeignKey(Article, verbose_name="Article", on_delete=models.CASCADE, null=True)
     date = models.DateTimeField(auto_now=True)
 

@@ -13,7 +13,7 @@ class TestApi:
             last_name="lastname",
             email="user@gmail.com",
             photo=SimpleUploadedFile(
-                name="adam.jpeg", content=open("media/author/adam.jpg", "rb").read()
+                name="adam.jpeg", content=open("media/author/adam.jpeg", "rb").read()
             ),
         )
 
@@ -28,7 +28,7 @@ class TestApi:
             author=Author.objects.get(),
             category=Category.objects.get(),
             image=SimpleUploadedFile(
-                name="adam.jpeg", content=open("media/author/adam.jpg", "rb").read()
+                name="adam.jpeg", content=open("media/author/adam.jpeg", "rb").read()
             ),
             register_date="2020-01-01"
         )
